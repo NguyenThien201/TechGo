@@ -1,4 +1,7 @@
 # TechGo
 # Team member
-* Thien Nguyen - 18127270
-* Khiem Nguyen - 18127119
+* __Thien Nguyen__ - 18127270
+* __Khiem Nguyen__ - 18127119
+
+# Function list
+[ ] Login screen
