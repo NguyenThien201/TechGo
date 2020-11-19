@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log in</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css" type="txt/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .fb {
+                background-color: #3B5998;
+                color: white;
+            }
+            .gg{
+                background-color: #dd4b39;
+                color: white;
+            }
+            .tt{
+                background-color: #55ACEE;
+                color: white;
+            }
+            .yh{
+                background-color: #720e9e;
+                color:white;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-light justify-content-end">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="./login.html" class="nav-link">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./signup.html" class="nav-link">Sign up</a>
+                </li>
+            </ul>
+        </nav>
+
+
+        <div class="container mt-5">
+            <div class="card mx-auto" style="width: 40rem;">
+                <div class="card-header text-center">Sign in</div>
+                <div class="card-body">
+                    <form action="#" method="POST">
+                        <div class="form-group row">
+                            <div class="col-3"></div>
+                            <button class="btn btn-block col-3 mb-3 text-center">
+                                <img src="images/driver.jpg" width="80%">
+                                <label class="text-center">Driver</label>
+                            </button>
+                            <button class="btn btn-block col-3 mb-3 text-center">
+                                <img src="images/customer.jpg" width="80%">
+                                <label class="text-center">Customer</label>
+                            </button>
+                            <div class="col-3"></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="username" class="col-sm-4">Email or Phone Number:</label>
+                            <input id="username" type="email/number" name="username" class="form-control col-7 ml-3">
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4">Password:</label>
+                            <input id="password" type="password" name="password" class="form-control col-lg-7 ml-3">
+                            
+
+                            
+                        </div>
+                        <div class="form-check">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input type="checkbox" class="form-check-input" id="remember">
+                                    <label class="form-check-label" for="remember">Remember me</label>
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <label class="mr-4"><a href="#">Forgot password?</a></label>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-5">Log in</button>
+                        </div>
+                    </form>
+                    <hr>
+                    
+                        <p class="text-center">Or sign in with:</p>
+                        <div class="row">
+                            <div class="col-3">
+                                <a href="#" class="fb btn">
+                                    <i class="fa fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </div>
+
+                            <div class="col-3">
+                                <a href="#" class="gg btn">
+                                    <i class="fa fa-google mr-1"></i>
+                                    Google
+                                </a>
+                            </div>
+
+                            <div class="col-3">
+                                <a href="#" class="yh btn">
+                                    <i class="fa fa-yahoo mr-1"></i>
+                                    Yahoo
+                                </a>
+                            </div>
+
+                            <div class="col-3">
+                                <a href="#" class="tt btn">
+                                    <i class="fa fa-twitter mr-1"></i>
+                                    Twitter
+                                </a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
