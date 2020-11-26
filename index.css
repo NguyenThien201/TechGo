@@ -88,3 +88,12 @@ a.gloHeader {
      border-width: 2px;
      border-color: yellow;
  }
+
+ .policy{
+  color:white;
+  font-size:100%;
+}
+
+a.policy:hover{
+  color:white;
+}
