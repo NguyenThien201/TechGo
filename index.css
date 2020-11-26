@@ -2,49 +2,15 @@ body {
     background-color: #190a70;
 }
 
-.navbar { 
+.navbar.gloHeader { 
     background-color: white;
 }
 
-#header {
-    height: 230px;
-    background-image: url(../images/header1.jpg);
-    background-repeat: no-repeat;
-    font-family: 'Shift', sans-serif;
-}
-#header h2 {    
-    font-size: 4em;
-    position: relative;
-    top: 30px;
-    left: 550px;
-    display: inline;
-}
-#header p {
-    font-size: 1.3em;
-    font-weight: bold;
-    position: relative;
-    top: 50px;
-    left: 60px;
-    display: inline
-}    
-#menu {
-    position: relative;
-    top: 100px;
-    left: 340px;
-    display: inline-block;
-}
-#menu li{
+li{
     font-weight: bold;
     display: inline;
     text-transform: uppercase;
     margin-right: 14px;
-}
-#menu input {
-    font-size: 0.7em;
-    text-transform: lowercase;
-    text-align: right;
-    position: relative;
-    top: -4px;
 }
 
 .p-2 a:link, .p-2 a:visited {
@@ -74,7 +40,9 @@ div.p-2 {
     align-items: center;
     vertical-align: middle;
 }
-a {
+
+a.gloHeader {
+    color: #190a70;
     align-items: center;
     vertical-align: middle;
     align-content: center;
@@ -95,14 +63,19 @@ a {
     width: 0;
     height: auto;
   }
+  
   button {
     border-width: 0px;
   }
+
   button:focus {
     outline: none !important;
     box-shadow: none;
  }
+
 #searchBar { 
+    text-align: left;
+    font-size: medium;
     border: 2px solid lightgray;
     border-radius: 8px;
     outline: 0;
@@ -110,3 +83,8 @@ a {
  } 
 
  
+ div.test { 
+     color: white;
+     border-width: 2px;
+     border-color: yellow;
+ }
