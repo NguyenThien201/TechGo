@@ -1,6 +1,5 @@
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -61,12 +60,7 @@ html {
   background-color: #555;
 }
 
-/* div, p, h2 {
-    border-collapse: collapse;
-    border: 1px solid red;
-} */
-
-img { 
+#ceoImg { 
     width: 100px;
     height: 100px;
     border-radius: 50px;    
