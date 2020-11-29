@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Add Map</title>
+  <title>Tracking</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,7 +13,40 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="./index.css">
   <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
-  
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ_3qjJdmDZj4BbuiMaFKSNPJFCBpnn4&callback=initMap&libraries=&v=weekly"
+    defer></script>
+  <style type="text/css">
+    /* Set the size of the div element that contains the map */
+    #map {
+      width: 100%;
+      height: 400px;
+    }
+  </style>
+  <script>
+    function initMap() {
+      // The location of nvc hcmus
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const hcmus = { lat: 10.76466, lng: 106.68188 };
+      // The map, centered at hcmus
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: hcmus,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: hcmus,
+        map: map,
+      });
+      const to = { lat: 10.75885, lng: 106.68436 };
+      const markerto = new google.maps.Marker({
+        position: to,
+        map: map,
+      });
+    }
+  </script>
+
 </head>
 
 
@@ -38,8 +71,9 @@
           Trip manage
         </a>
         <div class="dropdown-menu" style="margin-top:20px">
-          <a class="dropdown-item" href="#">Booking</a>
-          <a class="dropdown-item" href="./tripManager.html">Tracking</a>
+          <a class="dropdown-item" href="./booking.html">Booking</a>
+          <a class="dropdown-item" href="./tracking.html">Tracking</a>
+          <a class="dropdown-item" href="./history.html">Trips history</a>
         </div>
       </div>
     </div>
@@ -97,44 +131,171 @@
   </nav> <!-- global navbar -->
   <!--The div element for the map -->
 
-  
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="card container-fluid">
-          <div class="card-body"></div>
-          <h5 class="card-title">Become our partner</h5>
-          <p class="card-text">BECOME A TECHBIKE/
-              TECHDELIVERY just by one click</p>
-        </div>
-        <div class="card-body text-right "><a href="./whyTechGo.html" class="btn btn-primary">Be come a
-          partner</a></div>
+
+
+
+  <div class="container mt-5" style="background-color: #190a70;">
+    <div class="card" style="width: 100%;">
+      <div class="card-header text-center">Track your trip</div>
+      <div class="card-body">
+        <form action="#" method="POST">
+          <div style="border-radius: 8px;" id="map"></div>
+          <br>
+          <p>Your driver: Nguyen Van A</p>
+          <p>From: 123 Nam Ky Khoi Nghia</p>
+          <p>To: 321 Vo Thi Sau</p>
+          <p>Cost: 20.000 vnd</p>
+          <p>Arrived time: <span id="datetime"></span></p>
+          <!-- Fake the arive time -->
+          <script>
+            var timer = 1;
+            var d1 = new Date();
+            var d2 = new Date();
+            d1.setMinutes(d2.getMinutes() + (15))
+            document.getElementById("datetime").innerHTML = d1.getHours() + ":" + d1.getMinutes()
+          </script>
+
+
+          <div class="text-center">
+            <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
+              type="button">
+              Completed trip
+            </button>
+          </div>
+        </form>
+
+
       </div>
     </div>
 
   </div>
 
-  <div class="container">
-    <!-- become our partner row -->
 
-    <div class="row justify-content-center">
-        <div class="col-12">
-            <div class="card container-fluid">
-                <div class="card-body">
-                    <h5 class="card-title">Become our partner</h5>
-                    <p class="card-text">BECOME A TECHBIKE/
-                        TECHDELIVERY just by one click</p>
-                </div>
-                <div class="card-body text-right "><a href="./whyTechGo.html" class="btn btn-primary">Be come a
-                        partner</a></div>
-            </div>
-        </div> <!-- become our partner row -->
+  <footer>
+    <div class="container-fluid bg-light mt-5">
+      <div class="container">
+        <div class="row pb-3">
+          <div class="col-md-2 mt-3">
+            <h4 class="text-uppercase">TECHGO</h4>
+            <h5>Forward Together</h5>
+            <p>Đồ án môn học Phát triển ứng dụng WEB.<br>
+              Địa chỉ: 18CLC1-KTPM, Trường ĐHKHTN, 227 Nguyễn
+              Văn Cừ, phường 4, quận 5, TPHCM, Việt Nam.<br>
+              Số điện thoại: 0123456789<br>
+              GVHD: Trần Thị Bích Hạnh (MSc), Nguyễn Đức Huy(Bsc).
+
+            </p>
+            <h6>Follow us and keep updated</h6>
+            <i class="fa fa-facebook-official"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter-square"></i>
+
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-1 mb-3">
+            <h5>Về TechGo</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-1 mb-3">
+            <h5>Người dùng</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-1 mb-3">
+            <h5>Đối tác tài xế</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-1 mb-3">
+            <h5>Hướng Dẫn nhanh</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <!-- learn more about service -->
+    <div class="container-fluid bg-dark">
+      <div class="row text-white">
+        <div class="col-2 p-3 ml-5">
+          <a href="#" class="policy">Điều khoản và chính sách</a>
+        </div>
+        <div class="col-2 p-3 mr-3">
+          <a href="#" class="policy">Chính sách bảo mật</a>
+        </div>
+        <div class="col-7 p-3 ml-5 text-secondary">
+          &copy; TechGo 2020
+        </div>
+      </div>
 
-</div>
 
 
+      <!--
+      <div class="d-flex flex-row justify-content-center" style="line-height: 100%;">
+          <div class="float-left"><a href="#">Điều khoản và chính sách</a></div>
+          <div class="p-2"> • </div>
+          <div class="p-2"><a href="#">Chính sách bảo mật</a></div>
+          <div class="py-2">&copy; TechGo 2020</div>
+      </div> -->
+    </div>
+
+
+
+
+
+  </footer>
 </body>
 
 </html>

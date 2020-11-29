@@ -29,105 +29,85 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <nav class="navbar navbar-light gloHeader">
-        <div class="header container-fluid">
-            <div class="navbar-header border-0">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <i class="material-icons" style="font-size:50px;">menu</i>
-                    <img alt="Brand"
-                        src="data:image/png;base64,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"
-                        width="50px" height="50px" style="align-items: starts;">
-                </button>
-
+    <nav class="navbar navbar-expand-lg navbar-light gloHeader">
+        <div class="navbar-brand align-middle">
+            <a class="navbar-brand" href="./index.html">
+                <img src="./images/techGo.png" width="50" height="50" class="d-inline-block align-top align-middle"
+                    alt="">
+            </a>
+            <div class="btn-group">
+                <a id="mng" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                    Trip manage
+                </a>
+                <div class="dropdown-menu" style="margin-top:20px">
+                    <a class="dropdown-item" href="./booking.html">Booking</a>
+                    <a class="dropdown-item" href="./tracking.html">Tracking</a>
+                    <a class="dropdown-item" href="./history.html">Trips history</a>
+                </div>
             </div>
-            <div class="navbar justify-content-end">
-                <div class="d-flex flex-row-reverse">
+        </div>
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="dropdown" id="dropdownMenuButton"
-                        aria-expanded="false">
-                        <i class="material-icons" style="font-size:50px;">account_circle</i>
+        <div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="height: 50px;width: 50px;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="navbar-nav mr-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./abouus.htm">About us</a>
+                </li>
+            </div>
+
+
+
+            <div class="navbar-nav ml-auto align-items-center">
+                <div>
+                    <input class="align-middle" id="searchBar" style="width: 200px;height: 40px;outline: none;"
+                        type="search" placeholder="Search" aria-label="Search">
+                    <button class="" type="button">
+                        <i class="material-icons" style="font-size:50px;">search</i>
+                    </button>
+                </div>
+                <div>
+
+                    <button type="button" class="navbar-toggle collapsed"
+                        style="display: flex;align-items: center;vertical-align: middle;" data-toggle="dropdown"
+                        id="dropdownMenuButton" aria-expanded="false">
+                        <div class="navbar-toggler border-0">Account manage</div><i class="material-icons"
+                            style="font-size:50px;">account_circle</i>
                     </button>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"
+                        style="margin-right:5px">
                         <a class="dropdown-item gloHeader" href="./login.html">Sign in</a>
                         <a class="dropdown-item gloHeader" href="./signup.html">Sign up</a>
                         <a class="dropdown-item gloHeader" href="#">Sign out</a>
                     </div>
-
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#search"
-                        aria-expanded="false">
-                        <i class="material-icons" style="font-size:50px;">search</i>
-                    </button>
-
-                    <div id="search" class="collapse width" style="width:200px;margin: auto;">
-                        <input id="searchBar" style="width: 200px;height: 48px;outline: none;" type="search"
-                            placeholder="Search" aria-label="Search">
-                    </div>
-                    <div class="p-2">
-                        <a class="gloHeader" href="./index.html">Home</a>
-                    </div>
-                    <div class="p-2"><a class="gloHeader" href="./index.html">Help center</a> </div>
-                    <div class="p-2"><a class="gloHeader" href="./abouus.htm">About us</a> </div>
                 </div>
             </div>
-
-            <div class="collapse navbar-collapse" id="search-colapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="gloHeader" href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle gloHeader" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="gloHeader" href="#">Action</a></li>
-                            <li><a class="gloHeader" href="#">Another action</a></li>
-                            <li><a class="gloHeader" href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a class="gloHeader" href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+        </div>
 
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a class="gloHeader" href="#">Link <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li><a class="gloHeader" href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle gloHeader" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="gloHeader" href="#">Action</a></li>
-                            <li><a class="gloHeader" href="#">Another action</a></li>
-                            <li><a class="gloHeader" href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a class="gloHeader" href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a class="gloHeader" href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
     </nav> <!-- global navbar -->
 
 
-    <div class="container border border-primary">
+    <div class="container">
         <div class="row" style="text-align: center;">
             <div class="col-12">
                 <p style="color: white;font-size: 80px;margin: 40px;text-align: center;">Why join TechGo</p>
             </div>
         </div>
-        <div class="row rounded" style="background-color: white;padding-top: 40px;padding-bottom: 40px;">
+        <div class="row rounded msx-auto" style="background-color: white;padding-top: 40px;padding-bottom: 40px;">
             <div class="col-6 col-md-4 " style="text-align: center;">
                 <img src="./images/icon-freedom.png" width="100vw" height="100vw">
                 <h2 class="why">Transport</h2>
@@ -147,33 +127,34 @@
 
             </div>
             <div class="col-6 col-md-4 " style="text-align: center;">
-                    <img src="./images/icon-hours.png" width="100vw" height="100vw">                    
-                    <h2 class="why">Easy & Simple Sign-up</h2>
-                    <p class="why"> &emsp; Registration steps are simple: Fill in and submit the registration form Wait
-                        for us to contact and instruct in the document preparation process Submit the documents at our
-                        office (photocopies do not need to be notarized, but compared with the originals). You can drive
-                        more safely with Grab personal accident insurance for drivers and passengers.</p>
+                <img src="./images/icon-hours.png" width="100vw" height="100vw">
+                <h2 class="why">Easy & Simple Sign-up</h2>
+                <p class="why"> &emsp; Registration steps are simple: Fill in and submit the registration form Wait
+                    for us to contact and instruct in the document preparation process Submit the documents at our
+                    office (photocopies do not need to be notarized, but compared with the originals). You can drive
+                    more safely with Grab personal accident insurance for drivers and passengers.</p>
             </div>
-        </div>      
+        </div>
         <div class="row" style="margin-top: 20px;">
-            <div class="col-12" style="text-align: center;"><a href="./signup.html" class="btn btn-primary" style="width: 50%;">Register now</a>            </div>                    
-        </div>  
+            <div class="col-12" style="text-align: center;"><a href="./signup.html" class="btn btn-primary"
+                    style="width: 50%;">Register now</a> </div>
+        </div>
     </div>
-  
+
 
     <footer>
-        <div class="container-fluid bg-light mt-5" >
+        <div class="container-fluid bg-light mt-5">
             <div class="container">
-                <div class="row pb-3">       
+                <div class="row pb-3">
                     <div class="col-md-2 mt-3">
                         <h4 class="text-uppercase">TECHGO</h4>
                         <h5>Forward Together</h5>
                         <p>Đồ án môn học Phát triển ứng dụng WEB.<br>
-                            Địa chỉ: 18CLC1-KTPM, Trường ĐHKHTN, 227 Nguyễn 
+                            Địa chỉ: 18CLC1-KTPM, Trường ĐHKHTN, 227 Nguyễn
                             Văn Cừ, phường 4, quận 5, TPHCM, Việt Nam.<br>
                             Số điện thoại: 0123456789<br>
                             GVHD: Trần Thị Bích Hạnh (MSc), Nguyễn Đức Huy(Bsc).
-                            
+
                         </p>
                         <h6>Follow us and keep updated</h6>
                         <i class="fa fa-facebook-official"></i>
@@ -199,7 +180,7 @@
                             </li>
                         </ul>
                     </div>
-        
+
                     <div class="col-md-1 mb-3">
                         <h5>Người dùng</h5>
                         <ul class="list-unstyled">
@@ -255,7 +236,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
         <div class="container-fluid bg-dark">
             <div class="row text-white">
@@ -269,9 +250,9 @@
                     &copy; TechGo 2020
                 </div>
             </div>
-            
-                
-                
+
+
+
             <!--
             <div class="d-flex flex-row justify-content-center" style="line-height: 100%;">
                 <div class="float-left"><a href="#">Điều khoản và chính sách</a></div>
@@ -280,12 +261,12 @@
                 <div class="py-2">&copy; TechGo 2020</div>
             </div> -->
         </div>
-        
-        
-        
-        
 
-    </footer> 
+
+
+
+
+    </footer>
 
 </body>
 
