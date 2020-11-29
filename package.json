@@ -1,0 +1,19 @@
+{
+  "name": "techgo",
+  "version": "1.0.0",
+  "description": "* __Thien Nguyen__ - 18127270\r * __Khiem Nguyen__ - 18127119",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenThien201/TechGo.git"
+  },
+  "author": "thiennguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenThien201/TechGo/issues"
+  },
+  "homepage": "https://github.com/NguyenThien201/TechGo#readme"
+}
