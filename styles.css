@@ -14,3 +14,15 @@
     background-color: #720e9e;
     color:white;
 }
+@media all and (max-width: 480px) {
+    .col-3{
+        float: left;
+    }
+}
+ 
+/* Dành cho máy tính bảng */
+@media all and (max-width: 1024px) {
+    .col-3{
+        float: left;
+    }
+}
