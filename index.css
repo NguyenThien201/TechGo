@@ -13,9 +13,10 @@ li{
     margin-right: 14px;
 }
 
-.p-2 a:link, .p-2 a:visited {
-  background-color: white;
-  color: black;
+#mng {
+  text-decoration: none;
+  background-color: white;  
+  color: #190a70;
   font-size: medium;
   font-weight: bolder;
   border: 2px solid lightgray ;
@@ -26,16 +27,24 @@ li{
   display: inline-block;
 }
 
-.p-2 a:hover, .p-2 a:active {
+
+#mng:hover, #mng:active {
   background-color: #190a70;
   color: white;
+}
+
+a.dropdown-item:hover, a.dropdown-item:active, a.dropdown-item:focus {
+  font-weight: bolder;
+  color: #190a70;
+  background-color: white;
 }
 
 i { 
     align-items: center;
     vertical-align: middle;
 }
-div.p-2 {
+
+div.tripButton {
     display: flex;
     align-items: center;
     vertical-align: middle;
@@ -48,9 +57,6 @@ a.gloHeader {
     align-content: center;
     align-self: center;
 }
-.collapse {
-    visibility: hidden;
-  }
 
 .collapse.show {
     visibility: visible;
