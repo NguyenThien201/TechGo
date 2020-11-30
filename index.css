@@ -103,3 +103,9 @@ a.gloHeader {
 a.policy:hover{
   color:white;
 }
+
+.link{
+  text-transform: none;
+  color:black;
+  font-weight:normal;
+}
