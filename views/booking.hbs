@@ -1,0 +1,54 @@
+<div class="container mt-5" style="background-color: #190a70;">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Book a trip</div>
+            <div class="card-body">
+                <form action="#" method="POST">
+                    <h4 class="text-center">Choose a vehicle type:</h4>
+                    <div class="form-group row">
+                        <div class="col-3"></div>
+                        <button class="btn btn-block col-3 mb-3 text-center">
+                            <img src="images/car.png" width="100%">
+                            <label class="text-center">Car</label>
+                        </button>
+                        <button class="btn btn-block col-3 mb-3 text-center">
+                            <img src="images/motorbike.png" width="100%">
+                            <label class="text-center">Motorbike</label>
+                        </button>
+                        <div class="col-3"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="start" class="col">Start location:</label>
+                        <input id="start" type="text" name="start" class="form-control mx-2">
+                    </div>
+                    <div class="form-group row">
+                        <label for="end" class="col" class="custom-control-label">End location:</label>
+                        <input id="end" type="text" name="end" class="form-control mx-2">
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="pay" class="col">Payment method:</label>
+                        <select id="pay" class="custom-select mx-2">
+                            <option value="" selected>Choose a payment method</option>
+                            <option value="cash">Cash</option>
+                            <option value="e-wallet">E-wallet (Momo, Samsung Pay,...) </option>
+                            <option value="card">Credit/Debit/ATM Card</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
+                            type="button">
+                            Cancel
+                        </button>
+                        <button type="button" class="btn btn-primary px-5 mt-3"
+                            onclick="location.href='./tracking.html'" type="button">
+                            Book
+                        </button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,22 @@
+h2.why { 
+    color: #190a70;
+    margin-top: 20px;
+}
+
+p.why { 
+    color: black;
+    margin-top: 20px;
+}
+
+div.why { 
+    background-color: white;
+    margin: 2px;
+    border-width: 5px;
+
+    text-align: center;    
+}
+
+.col {
+    display: table-cell;
+    padding: 16px;
+  }
