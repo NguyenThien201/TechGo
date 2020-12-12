@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-light gloHeader">
         <div class="navbar-brand align-middle">
             <a class="navbar-brand" href="/">
-                <img src="./images/techGo.png" width="50" height="50" class="d-inline-block align-top align-middle"
+                <img src="/images/techGo.png" width="50" height="50" class="d-inline-block align-top align-middle"
                     alt="">
             </a>
             <div class="btn-group">
@@ -19,9 +19,15 @@
                     Trip manage
                 </a>
                 <div class="dropdown-menu" style="margin-top:20px">
-                    <a class="dropdown-item" href="/booking">Booking</a>
-                    <a class="dropdown-item" href="/tracking">Tracking</a>
-                    <a class="dropdown-item" href="/history">Trips history</a>
+                    {{#if isLoggedIn}}
+                    <a class="dropdown-item" href="/booktrack/booking">Booking</a>
+                    <a class="dropdown-item" href="/booktrack/tracking">Tracking</a>
+                    <a class="dropdown-item" href="/booktrack/history">Trips history</a>
+                    {{else}}
+                    <a class="dropdown-item" href="/user/login">Booking</a>
+                    <a class="dropdown-item" href="/user/login">Tracking</a>
+                    <a class="dropdown-item" href="/user/login">Trips history</a>
+                    {{/if}}
                 </div>
             </div>
         </div>
@@ -58,7 +64,7 @@
                     </button>
                 </div>
                 <div>
-
+                    {{#unless isLoggedIn}}
                     <button type="button" class="navbar-toggle collapsed"
                         style="display: flex;align-items: center;vertical-align: middle;" data-toggle="dropdown"
                         id="dropdownMenuButton" aria-expanded="false">
@@ -67,11 +73,22 @@
                     </button>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton"
-                        style="margin-right:5px">
-                        <a class="dropdown-item gloHeader" href="/login">Sign in</a>
-                        <a class="dropdown-item gloHeader" href="/signup">Sign up</a>
-                        <a class="dropdown-item gloHeader" href="#">Sign out</a>
+                        style="margin-right:5px">                        
+                        <a class="dropdown-item gloHeader" href="/user/login">Sign in</a>
+                        <a class="dropdown-item gloHeader" href="/user/signup">Sign up</a>
                     </div>
+                    {{else}}
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{username}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <a class="dropdown-item" href="/user/signout">Sign out</a>
+                        </div>
+                    </div>
+                        
+                        
+                    {{/unless}}
                 </div>
             </div>
         </div>

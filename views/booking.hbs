@@ -2,32 +2,37 @@
         <div class="card mx-auto" style="width: 100%;">
             <div class="card-header text-center">Book a trip</div>
             <div class="card-body">
-                <form action="#" method="POST">
+                <form action="/booktrack/booking" method="POST">
                     <h4 class="text-center">Choose a vehicle type:</h4>
                     <div class="form-group row">
                         <div class="col-3"></div>
-                        <button class="btn btn-block col-3 mb-3 text-center">
-                            <img src="images/car.png" width="100%">
-                            <label class="text-center">Car</label>
-                        </button>
-                        <button class="btn btn-block col-3 mb-3 text-center">
-                            <img src="images/motorbike.png" width="100%">
-                            <label class="text-center">Motorbike</label>
-                        </button>
+                        <div class="col-3 mb-3 form-check mt-2 text-center">
+                            <img src="/images/car.png" width="100%">
+                            <br>
+                            <input class="form-check-input" type="radio" name="vehicleType" id="car" value="Car" required>
+                            <label class="form-check-label" for="car">Car</label>
+                        </div>
+                        <div class="col-3 mb-3 form-check mt-2 text-center">
+                            <img src="/images/motorbike.png" width="100%">
+                            <br>
+                            <input class="form-check-input" type="radio" name="vehicleType" id="motorbike" value="Motorbike" required>
+                            <label class="form-check-label" for="motorbike">Motorbike</label>
+                        </div>
+                        
                         <div class="col-3"></div>
                     </div>
                     <div class="form-group row">
                         <label for="start" class="col">Start location:</label>
-                        <input id="start" type="text" name="start" class="form-control mx-2">
+                        <input id="start" type="text" name="start" class="form-control mx-2" required>
                     </div>
                     <div class="form-group row">
                         <label for="end" class="col" class="custom-control-label">End location:</label>
-                        <input id="end" type="text" name="end" class="form-control mx-2">
+                        <input id="end" type="text" name="end" class="form-control mx-2" required>
                     </div>
 
                     <div class="form-group row">
                         <label for="pay" class="col">Payment method:</label>
-                        <select id="pay" class="custom-select mx-2">
+                        <select id="pay" class="custom-select mx-2" required>
                             <option value="" selected>Choose a payment method</option>
                             <option value="cash">Cash</option>
                             <option value="e-wallet">E-wallet (Momo, Samsung Pay,...) </option>
@@ -36,12 +41,12 @@
                     </div>
 
                     <div class="text-center">
-                        <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
+                        <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='/'"
                             type="button">
                             Cancel
                         </button>
                         <button type="button" class="btn btn-primary px-5 mt-3"
-                            onclick="location.href='./tracking.html'" type="button">
+                            onclick="location.href='/booktrack/tracking'" type="button">
                             Book
                         </button>
                     </div>
