@@ -1,59 +1,189 @@
 <div class="container mt-5" style="background-color: #190a70;">
-        <div class="card mx-auto" style="width: 100%;">
-            <div class="card-header text-center">Book a trip</div>
-            <div class="card-body">
-                <form action="/booktrack/booking" method="POST">
-                    <h4 class="text-center">Choose a vehicle type:</h4>
-                    <div class="form-group row">
-                        <div class="col-3"></div>
-                        <div class="col-3 mb-3 form-check mt-2 text-center">
-                            <img src="/images/car.png" width="100%">
-                            <br>
-                            <input class="form-check-input" type="radio" name="vehicleType" id="car" value="Car" required>
-                            <label class="form-check-label" for="car">Car</label>
-                        </div>
-                        <div class="col-3 mb-3 form-check mt-2 text-center">
-                            <img src="/images/motorbike.png" width="100%">
-                            <br>
-                            <input class="form-check-input" type="radio" name="vehicleType" id="motorbike" value="Motorbike" required>
-                            <label class="form-check-label" for="motorbike">Motorbike</label>
-                        </div>
-                        
-                        <div class="col-3"></div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="start" class="col">Start location:</label>
-                        <input id="start" type="text" name="start" class="form-control mx-2" required>
-                    </div>
-                    <div class="form-group row">
-                        <label for="end" class="col" class="custom-control-label">End location:</label>
-                        <input id="end" type="text" name="end" class="form-control mx-2" required>
-                    </div>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ_3qjJdmDZj4BbuiMaFKSNPJFCBpnn4&callback=initMap&libraries=&v=weekly"
+        defer></script>
+    <script>
+        let mapId = "map1";
+        let map1;
+        let map2;
+        let markers1 = [];
+        let markers2 = [];
 
-                    <div class="form-group row">
-                        <label for="pay" class="col">Payment method:</label>
-                        <select id="pay" class="custom-select mx-2" required>
-                            <option value="" selected>Choose a payment method</option>
-                            <option value="cash">Cash</option>
-                            <option value="e-wallet">E-wallet (Momo, Samsung Pay,...) </option>
-                            <option value="card">Credit/Debit/ATM Card</option>
-                        </select>
-                    </div>
 
-                    <div class="text-center">
-                        <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='/'"
-                            type="button">
-                            Cancel
-                        </button>
-                        <button type="button" class="btn btn-primary px-5 mt-3"
-                            onclick="location.href='/booktrack/tracking'" type="button">
-                            Book
-                        </button>
-                    </div>
-                </form>
+document.addEventListener('readystatechange', event => { 
 
+    // When HTML/DOM elements are ready:
+    if (event.target.readyState === "interactive") {   //does same as:  ..addEventListener("DOMContentLoaded"..
+        
+    }
+
+    // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+    if (event.target.readyState === "complete") {
+         setInterval( function() {
+              {{#if message}}
+        
+        {{/if}}
+      }, 2500);
+    }
+});
+
+
+        function initMap() {
+            const haightAshbury = { lat: 37.769, lng: -122.446 };
+            map1 = new google.maps.Map(document.getElementById("map1"), {
+                zoom: 12,
+                center: haightAshbury,
+                mapTypeId: "roadmap",
+            });
+
+            map1.addListener("click", (event) => {
+                addMarker1(event.latLng);
+            });
+
+            map2 = new google.maps.Map(document.getElementById("map2"), {
+                zoom: 12,
+                center: haightAshbury,
+                mapTypeId: "roadmap",
+            });
+
+            map2.addListener("click", (event) => {
+                addMarker2(event.latLng);
+            });
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(addCurrentMarker);
+            } else {
+                var myLatlng = new google.maps.LatLng(10.76322727177531, 106.68157149602291);
+                addMarker(myLatlng);
+            }
+
+
+        }
+
+        function addCurrentMarker(pos) {
+            var myLatlng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+            addMarker1(myLatlng);
+            addMarker2(myLatlng);
+        }
+
+
+        function addMarker1(location) {
+            clearMarkers1();
+            map1.panTo(new google.maps.LatLng(location.lat(), location.lng()));
+            document.getElementById("start").value = location;
+
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map1,
+            });
+            markers1.push(marker);
+
+
+        }
+        function addMarker2(location) {
+            clearMarkers2();
+            map2.panTo(new google.maps.LatLng(location.lat(), location.lng()));
+            document.getElementById("end").value = location;
+
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map2,
+            });
+            markers2.push(marker);
+
+
+        }
+
+        function clearMarkers1() {
+            for (let i = 0; i < markers1.length; i++) {
+                markers1[i].setMap(null);
+            }
+        }
+
+        function clearMarkers2() {
+            for (let i = 0; i < markers2.length; i++) {
+                markers2[i].setMap(null);
+            }
+        }
+
+    </script>
+    <script type="text/javascript"></script>
+    <div class="card mx-auto" style="width: 100%;">
+        <div class="card-header text-center">Book a trip</div>
+        <div class="card-body">
+            {{#if message}}
+            <div class="row">
+                <div class="col-md-12 alert {{kind}} text-center" style="font-size: 5vw;">
+                    {{message}}
+                </div>
 
             </div>
-        </div>
+            <div class="row justify-content-center">
+                <div class="spinner-grow" style="width: 30vw; height: 30vw;color: #190a70;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            {{else}}
+            <form action="/booktrack/booking" method="POST" role="form">
+                <h4 class="text-center">Choose a vehicle type:</h4>
+                <div class="form-group row">
+                    <div class="col-3"></div>
+                    <div class="col-3 mb-3 form-check mt-2 text-center">
+                        <img src="/images/car.png" width="100%">
+                        <br>
+                        <input class="form-check-input" type="radio" name="vehicleType" id="car" value="Car" required>
+                        <label class="form-check-label" for="car">Car</label>
+                    </div>
+                    <div class="col-3 mb-3 form-check mt-2 text-center">
+                        <img src="/images/motorbike.png" width="100%">
+                        <br>
+                        <input class="form-check-input" type="radio" name="vehicleType" id="motorbike" value="Motorbike"
+                            required>
+                        <label class="form-check-label" for="motorbike">Motorbike</label>
+                    </div>
 
+                    <div class="col-3"></div>
+                </div>
+                <div class="form-group row">
+                    <label for="start" class="col">Start location:</label>
+                    <input id="start" type="decimal" name="start" class="form-control mx-2" readonly="readonly" required>
+                    <p id="map1Text"></p>
+                    <div id="map1" style="width: 100%;height: 300px; border-radius: 8px;margin: 8px;"></div>
+
+                </div>
+                <div class="form-group row">
+                    <label for="end" class="col" class="custom-control-label">End location:</label>
+                    <input id="end" type="decimal" name="end" class="form-control mx-2" readonly="readonly" required>
+                    <p id="map2Text"></p>
+                    <div id="map2" style="width: 100%;height: 300px; border-radius: 8px;margin: 8px;"></div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="pay" class="col">Payment method:</label>
+
+                    <select id="pay" name="paymentMethod" value="Pay" class="custom-select mx-2" required>
+                        <option value="" selected>Choose a payment method</option>
+                        <option value="cash">Cash</option>
+                        <option value="e-wallet">E-wallet (Momo, Samsung Pay,...) </option>
+                        <option value="card">Credit/Debit/ATM Card</option>
+                    </select>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='/'" type="button">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn btn-primary px-5 mt-3" type="button">
+                        Book
+                    </button>
+                </div>
+            </form>
+            {{/if}}
+
+
+
+        </div>
     </div>
+
+</div>

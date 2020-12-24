@@ -14,6 +14,11 @@ app.set("view engine","hbs");
 
 app.set("port",(process.env.PORT|8000));
 
+// setInterval( function() {
+//     console.log("abc")
+//   }, 250);
+
+
 let cookie_parser=require("cookie-parser");
 app.use(cookie_parser());
 var sessions=require("express-session");
@@ -36,9 +41,13 @@ app.get("/login",function(req,res){
 app.get("/signup",function(req,res){
     res.render("signup",{title:"Sign up"});
 })*/
+var userName = "";
+var isLoggedIn = false;
 app.use(function(req,res,next){
     res.locals.username=req.session.user? req.session.user.name+" ("+req.session.user.type[0]+")" : "";
+    userName = res.locals.username;
     res.locals.isLoggedIn=req.session.user? true:false;
+    isLoggedIn = res.locals.isLoggedIn;
     next();
 });
 
@@ -83,7 +92,14 @@ app.get("/sync",function(req,res){
     models.sequelize.sync().then(function(){
         res.send("Database sync complete");
     });
-}); */  
+}); 
+*/  
+var models=require("./models");
+app.get("/sync",function(req,res){
+    models.sequelize.sync().then(function(){
+        res.send("Database sync complete");
+    });
+}); 
 
 app.listen(app.get("port"),function(){
     console.log("Listening at port "+app.get("port")); 

@@ -11,16 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Trip.belongsTo(models.BookingOrder);
     }
   };
   Trip.init({
+    userId: DataTypes.STRING,
+    driverId: DataTypes.STRING,
     vehicle: DataTypes.STRING,
-    pickup: DataTypes.STRING,
-    dropoff: DataTypes.STRING,
-    startTime: DataTypes.DATE,
-    endTime: DataTypes.DATE,
-    status: DataTypes.STRING
+    startLat: DataTypes.DECIMAL,
+    startLng: DataTypes.DECIMAL,
+    stopLat: DataTypes.DECIMAL,
+    stopLng: DataTypes.DECIMAL,
+    tripStatus: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Trip',

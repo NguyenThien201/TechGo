@@ -55,7 +55,8 @@ router.post("/login",function(req,res){
 })
 
 
-router.post("/signup",function(req,res,next){
+router.post("/signup",function(req,res,next) {
+    console.log("User has post a request with these information");
     var name=req.body.name;
     var email=req.body.email;
     var password=req.body.password;
@@ -63,6 +64,7 @@ router.post("/signup",function(req,res,next){
     var phone=req.body.phone;
     var confirm=req.body.confirm;
     var accountType=req.body.accountType;
+    console.log(req.body);
     //var keepLoggedIn=req.body.keepLoggedIn!=undefined;
     if (password!=confirm)
         return res.render("signup",{message:"Confirm password does not match with the original password!",kind:"alert-danger"}); 
