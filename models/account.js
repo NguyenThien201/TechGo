@@ -11,8 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Account.hasMany(models.BookingOrder);
-      Account.hasMany(models.Trip);
     }
   };
   Account.init({
@@ -22,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.STRING,
     type: DataTypes.STRING,
     password: DataTypes.STRING,
-    isAdmin: DataTypes.BOOLEAN
+    isAdmin: DataTypes.STRING,
+    currentLat: DataTypes.DECIMAL,
+    currentLng: DataTypes.DECIMAL,
+    isAvaiable: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Account',

@@ -2,11 +2,12 @@ var express=require("express");
 const { isLoggedIn } = require("../controller/trips");
 var router=express.Router();
 var tripController=require("../controller/trips");
+var userController=require("../controller/users")
 
+var userName = require("../index")
 router.get("/booking",function(req,res){
     res.render("booking",{title:"Booking"});
 })
-
 router.get("/tracking",function(req,res){
     res.render("tracking",{title:"Tracking"});
 })
@@ -30,20 +31,25 @@ router.post("/booking",function(req,res){
     var startList = startLocation.replace("(","").replace(")","").replace(" ","").toString().split(",");    
     var endList = endLocation.replace("(","").replace(")","").replace(" ","").toString().split(",");    
     console.log(startList[0]);
+
+    //get user id by console.log(req.session.user.name);
+    
     let userId="user";
-    let driverId="driver";
+    let driverId="";
     let startLat = startList[0];
     let startLng = startList[1];
     let endLat = endList[0];
     let endLng = endList[1];
-    let tripStatus = 0;
-    // console.log(username);
-    // console.log(isLoggedIn);
+    let tripStatus = 1;
+    
+    
+    // put the find driver here
     var call = function() { 
         if (i >= 10) {             
             clearInterval(refreshIntervalId);
             trip = {
                 // sequelize model:create --name Trip --attributes userId:string,driverId:string,vehicle:string,startLat:decimal,startLng:decimal,stopLat:decimal,stopLng:decimal,tripStatus:integer
+
                 userId,driverId,vehicle:vehicleType,startLat,startLng,stopLat:endLat,stopLng:endLng,tripStatus
             }
             
@@ -51,7 +57,7 @@ router.post("/booking",function(req,res){
     
             return;
         }
-        // console.log("namo" + i);
+
         i+=20;
       
     }
@@ -60,7 +66,6 @@ router.post("/booking",function(req,res){
 /* later */
 
     return res.render("booking",{message: "Finding driver"});
-   return res.render("tracking",{startLocation: startLocation,endLocation: endLocation,vehicleType: vehicleType, paymentMethod: payment, roadLenght: 100});
 
 })
 

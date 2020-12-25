@@ -65,6 +65,7 @@ router.post("/signup",function(req,res,next) {
     var confirm=req.body.confirm;
     var accountType=req.body.accountType;
     console.log(req.body);
+    
     //var keepLoggedIn=req.body.keepLoggedIn!=undefined;
     if (password!=confirm)
         return res.render("signup",{message:"Confirm password does not match with the original password!",kind:"alert-danger"}); 
@@ -76,6 +77,7 @@ router.post("/signup",function(req,res,next) {
         userController.getUserTypebyPhone(phone,accountType).then(function(user){
             if (user)
                 return res.render("signup",{message:"Phone number already exists! Please take another one",kind:"alert-danger"}); 
+
             user={
                 name,email,phone,address,type:accountType,password,isAdmin:false
             }
@@ -86,6 +88,8 @@ router.post("/signup",function(req,res,next) {
         })
     }).catch(error => next(error));
 });
+
+
 /*
 router.get("/signout",function(req,res,next){
     req.session.destroy(function(err){
