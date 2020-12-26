@@ -1,13 +1,17 @@
 var express=require("express");
 var uploadFile=require("express-fileupload");
-
+//import {config} from "dotenv"
 var router=express.Router();
 var userController=require("../controller/users");
 var nodemail=require("nodemailer");
 var crypto=require("crypto");
 var sendGridTransport=require("nodemailer-sendgrid-transport");
 var sendGridMail=require("@sendgrid/mail");
-sendGridMail.setApiKey("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");
+//config();
+require("dotenv").config();
+//console.log(process.env);
+sendGridMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 
 router.get("/login",function(req,res){
     req.session.returnURL=req.query.returnURL;
