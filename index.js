@@ -1,6 +1,7 @@
 var express=require("express");
 var app=express();
 
+
 app.use(express.static(__dirname+"/public"));
 var expressHbs=require("express-handlebars");
 var hbs=expressHbs.create({
@@ -38,6 +39,7 @@ app.get("/signup",function(req,res){
 })*/
 app.use(function(req,res,next){
     res.locals.username=req.session.user? req.session.user.name+" ("+req.session.user.type[0]+")" : "";
+    res.locals.avatar=req.session.user? req.session.user.avatar:"";
     res.locals.isLoggedIn=req.session.user? true:false;
     next();
 });

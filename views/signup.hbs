@@ -9,7 +9,7 @@
                         </div>
                 </div>
                 {{/if}}
-                <form action="/user/signup" method="POST" role="form">
+                <form action="/user/signup" method="POST" role="form" enctype="multipart/form-data">
                     <h4 class="text-center">Choose an account type:</h4>
                     <div class="form-group row">
                         <div class="col-3 mb-3"></div>
@@ -19,7 +19,6 @@
                             <input class="form-check-input" type="radio" name="accountType" id="driver" value="Driver" required>
                             <label class="form-check-label" for="driver">Driver</label>
                         </div>
-                        
                         <div class="col-3 mb-3 form-check mt-2 text-center">
                             <img src="/images/customer.png" width="80%" height="width">
                             <br>
@@ -34,6 +33,10 @@
                         <input id="name" type="text" name="name" class="form-control col-lg-7" required>
                     </div>
                     <div class="form-group row">
+                        <label for="dob" class="col-lg-4 col-form-label">Date of birth:</label>
+                        <input id="dob" type="date" name="dob" class="form-control col-lg-7">
+                    </div>
+                    <div class="form-group row">
                         <label for="phone" class="col-lg-4 col-form-label">Phone number:</label>
                         <input id="phone" type="number" name="phone" class="form-control col-lg-7" required>
                     </div>
@@ -44,6 +47,10 @@
                     <div class="form-group row">
                         <label for="address" class="col-lg-4 col-form-label">Address:</label>
                         <input id="address" type="text" name="address" class="form-control col-lg-7">
+                    </div>
+                    <div class="form-group row">
+                        <label for="avatar" class="col-lg-4 col-form-label">Avatar:</label>
+                        <input id="avatar" type="file" name="avatar" accept="image/*" id="avatar" class="form-control-file col-lg-8">
                     </div>
                     <div class="form-group row">
                         <label for="password" class="col-lg-4 col-form-label">Password:</label>
@@ -63,36 +70,7 @@
                     </div>
                 </form>
                 <hr>
-                <p class="text-center">Or sign up with:</p>
-                <div class="row">
-                    <div class="col-lg-3 my-1 text-center">
-                        <a href="#" class="fb btn" style="width: 100%;">
-                            <i class="fa fa-facebook"></i>
-                            Facebook
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 my-1 text-center">
-                        <a href="#" class="gg btn" style="width: 100%;">
-                            <i class="fa fa-google"></i>
-                            Google
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 my-1 text-center">
-                        <a href="#" class="yh btn" style="width: 100%;">
-                            <i class="fa fa-yahoo"></i>
-                            Yahoo
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 my-1 text-center">
-                        <a href="#" class="tt btn" style="width: 100%;">
-                            <i class="fa fa-twitter"></i>
-                            Twitter
-                        </a>
-                    </div>
-                </div>
+                <p>Already have an account? Please <a href="/user/login">Sign in</a></p>
             </div>
         </div>
 

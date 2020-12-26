@@ -11,6 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      dob:{
+        type: Sequelize.DATEONLY
+      },
       email: {
         type: Sequelize.STRING
       },
@@ -20,6 +23,9 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
+      avatarPath:{
+        type:Sequelize.TEXT
+      },
       type: {
         type: Sequelize.STRING
       },
@@ -28,6 +34,12 @@ module.exports = {
       },
       isAdmin:{
         type: Sequelize.BOOLEAN
+      },
+      resetToken:{
+        type: Sequelize.STRING
+      },
+      expireToken:{
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

@@ -17,12 +17,16 @@ module.exports = (sequelize, DataTypes) => {
   };
   Account.init({
     name: DataTypes.STRING,
+    dob:DataTypes.DATEONLY,
     email: DataTypes.STRING,
     phone: DataTypes.STRING,
     address: DataTypes.STRING,
+    avatar:DataTypes.TEXT,
     type: DataTypes.STRING,
     password: DataTypes.STRING,
-    isAdmin: DataTypes.BOOLEAN
+    isAdmin: DataTypes.BOOLEAN,
+    resetToken:DataTypes.STRING,
+    expireToken:DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Account',
