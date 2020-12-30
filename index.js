@@ -93,11 +93,13 @@ app.get("/sync",function(req,res){
 */
 var models=require("./models");
 app.get("/sync",function(req,res){
+    console.log("Sync did run");
     models.sequelize.sync().then(function(){
         res.send("Database sync complete");
     });
+    console.log("Sync did run");
 }); 
 
-app.listen(process.env.PORT || 3000,function(){
+app.listen(app.get("port"),function(){
     console.log("Listening at port "+app.get("port")); 
 })
