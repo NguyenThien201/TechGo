@@ -15,10 +15,16 @@
   },
   "production": {
     "use_env_variable": "DATABASE_URL",
-    "username": "root",
-    "password": null,
+    "username": "techgo",
+    "password": "secret",
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false 
+      }
+    }
   }
 }

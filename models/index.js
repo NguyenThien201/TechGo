@@ -1,7 +1,6 @@
 'use strict';
 
 require('pg').defaults.ssl = true;
-require('pg').defaults.ssl.rejectUnauthorized = false;
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
