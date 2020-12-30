@@ -100,6 +100,6 @@ app.get("/sync",function(req,res){
     console.log("Sync did run");
 }); 
 
-app.listen(app.get("port"),function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("Listening at port "+app.get("port")); 
 })
