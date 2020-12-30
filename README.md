@@ -3,5 +3,5 @@
 * __Thien Nguyen__ - 18127270
 * __Khiem Nguyen__ - 18127119
 
-# Function list
-[ ] Login screen
+# Link to website with backend service:
+https://techgohcmus.herokuapp.com/
