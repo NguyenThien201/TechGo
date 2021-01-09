@@ -1,0 +1,34 @@
+<div class="container mt-5" style="background-color: #190a70;">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Reset password</div>
+            <div class="card-body">
+                {{#if message}}
+                <div class="row">
+                        <div class="col-md-12 alert {{kind}} text-center">
+                            {{message}}
+                        </div>
+                </div>
+                {{/if}}
+                {{#unless ok}}
+                <form action="/user/reset/done" method="POST">
+                    <div class="form-group row">
+                        <label for="newpass" class="col-lg-4">New password:</label>
+                        <input id="newpass" type="password" name="newpass" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="newpass" class="col-lg-4">Confirm new password:</label>
+                        <input id="newpass" type="password" name="confirmnew" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <input type="hidden" name="token" value="{{token}}">
+                    <input type="hidden" name="type" value="{{type}}">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5">Submit</button>
+                    </div>
+                </form>
+                <hr>
+                {{/unless}}
+                
+            </div>
+        </div>
+
+    </div>

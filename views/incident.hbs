@@ -1,0 +1,52 @@
+<div class="container mt-5">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Report incident</div>
+            <div class="card-body">
+                {{#if message}}
+                <div class="row">
+                        <div class="col-md-12 alert {{kind}} text-center">
+                            {{message}}
+                        </div>
+                </div>
+                {{/if}}
+                <form action="#" method="POST" role="form" enctype="multipart/form-data">
+                    
+                    <div class="form-group row">
+                        <label for="name" class="col-lg-4 col-form-label">Name:</label>
+                        <input id="name" type="text" name="name" class="form-control col-lg-7" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-lg-4 col-form-label">Phone number:</label>
+                        <input id="phone" type="number" name="phone" class="form-control col-lg-7" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="mail" class="col-lg-4 col-form-label">Email:</label>
+                        <input id="mail" type="email" name="email" class="form-control col-lg-7" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="booking" class="col-lg-4 col-form-label">Booking ID:</label>
+                        <input id="booking" type="text" name="booking" class="form-control col-lg-7">
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="issue" class="col-lg-4 col-form-label">Issue:</label>
+                        <input id="issue" type="text" name="issue" class="form-control col-lg-7" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-lg-4 col-form-label">Tell us what happened:</label>
+                        <textarea id="description" name="description" rows="10" class="form-control col-lg-7" required></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label for="proof" class="col-lg-4 col-form-label">Proof (Optional):</label>
+                        <input id="proof" type="file" name="proof" accept="image/*" class="form-control-file col-lg-8">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5 mt-3">Submit</button>
+                    </div>
+                </form>
+                <hr>
+                
+            </div>
+        </div>
+
+    </div>

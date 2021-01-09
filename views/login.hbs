@@ -1,0 +1,62 @@
+<div class="container mt-5" style="background-color: #190a70;">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Sign in</div>
+            <div class="card-body">
+                {{#if message}}
+                <div class="row">
+                        <div class="col-md-12 alert {{kind}} text-center">
+                            {{message}}
+                        </div>
+                </div>
+                {{/if}}
+                <form action="/user/login" method="POST">
+                    <h4 class="text-center">Choose an account type:</h4>
+                    <small class="text-center form-text text-muted">(If not choosing an account type, the default is Admin)</small>
+                    <div class="form-group row">
+                        <div class="col-3 mb-3"></div>
+                        <div class="col-3 mb-3 form-check mt-2 text-center">
+                            <img src="/images/driver.png" width="80%" height="width">
+                            <br>
+                            <input class="form-check-input" type="radio" name="accountType" id="driver" value="Driver">
+                            <label class="form-check-label" for="driver">Driver</label>
+                        </div>
+                        
+                        <div class="col-3 mb-3 form-check mt-2 text-center">
+                            <img src="/images/customer.png" width="80%" height="width">
+                            <br>
+                            <input class="form-check-input" type="radio" name="accountType" id="customer" value="Customer">
+                            <label class="form-check-label" for="driver">Customer</label>
+                        </div>
+                        <div class="col-3 mb-3"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="username" class="col-lg-4">Email or Phone Number:</label>
+                        <input id="username" type="text" name="username" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password" class="col-lg-4">Password:</label>
+                        <input id="password" type="password" name="password" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <div class="form-check">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="checkbox" class="form-check-input" id="remember">
+                                <label class="form-check-label" for="remember">Remember me</label>
+                            </div>
+                            <div class="col-6 text-right">
+                                <label class="mr-4"><a href="/user/forgot">Forgot password?</a></label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5">Log in</button>
+                    </div>
+                </form>
+                <hr>
+                <p>Don't have an account? Create a new one. Please <a href="/user/signup">register</a></p>
+                
+            </div>
+        </div>
+
+    </div>

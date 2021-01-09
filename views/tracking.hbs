@@ -1,0 +1,69 @@
+<div class="container mt-5" style="background-color: #190a70;">
+    <div class="card" style="width: 100%;">
+      <div class="card-header text-center">Track your trip</div>
+      <div class="card-body">
+        <form action="#" method="POST">
+          <div style="border-radius: 8px;" id="map"></div>          
+          <br>
+          {{#if isConsumer}}
+          <p>Your driver: {{name}}</p>
+          <p>From: {{start}}</p>
+          <p>To: {{end}}</p>
+          <p>Cost: {{cost}}</p>
+          <p>Arrived time: <span id="datetime"></span></p>
+          {{else}}
+          <p>Your customer: {{name}}</p>
+          <p>From: {{from}}</p>
+          <p>To: {{to}}</p>
+          <p>Cost: {{cost}}</p>
+          <p>Arrived time: <span id="datetime"></span></p>
+          {/if}
+          <!-- Fake the arive time -->
+          <script>
+            var timer = 1;
+            var d1 = new Date();
+            var d2 = new Date();
+            d1.setMinutes(d2.getMinutes() + (15))
+            document.getElementById("datetime").innerHTML = d1.getHours() + ":" + d1.getMinutes()
+          </script>
+
+
+          <div class="text-center">
+            <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
+              type="button">
+              Completed trip
+            </button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ_3qjJdmDZj4BbuiMaFKSNPJFCBpnn4&callback=initMap&libraries=&v=weekly"
+    defer></script>
+<script>
+    function initMap() {
+      // The location of nvc hcmus
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const hcmus = { lat: 10.76466, lng: 106.68188 };
+      // The map, centered at hcmus
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: hcmus,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: hcmus,
+        map: map,
+      });
+      const to = { lat: 10.75885, lng: 106.68436 };
+      const markerto = new google.maps.Marker({
+        position: to,
+        map: map,
+      });
+    }
+  </script>

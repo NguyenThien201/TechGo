@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tracking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Use for google material icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/abouus.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/whyTechGo.css">
+  <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ_3qjJdmDZj4BbuiMaFKSNPJFCBpnn4&callback=initMap&libraries=&v=weekly"
+    defer></script>
+  
+  <script>
+    function initMap() {
+      // The location of nvc hcmus
+      const directionsService = new google.maps.DirectionsService();
+      const directionsRenderer = new google.maps.DirectionsRenderer();
+      const hcmus = { lat: 10.76466, lng: 106.68188 };
+      // The map, centered at hcmus
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: hcmus,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: hcmus,
+        map: map,
+      });
+      const to = { lat: 10.75885, lng: 106.68436 };
+      const markerto = new google.maps.Marker({
+        position: to,
+        map: map,
+      });
+    }
+  </script>
+
+</head>
+
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light gloHeader">
+    <div class="navbar-brand align-middle">
+      <a class="navbar-brand" href="./index.html">
+        <img src="./images/techGo.png" width="50" height="50" class="d-inline-block align-top align-middle" alt="">
+      </a>
+      <div class="btn-group">
+        <a id="mng" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+          Trip manage
+        </a>
+        <div class="dropdown-menu" style="margin-top:20px">
+          <a class="dropdown-item" href="./booking.html">Booking</a>
+          <a class="dropdown-item" href="./tracking.html">Tracking</a>
+          <a class="dropdown-item" href="./history.html">Trips history</a>\
+        </div>
+      </div>
+    </div>
+
+    <div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        style="height: 50px;width: 50px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <div class="navbar-nav mr-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./abouus.htm">About us</a>
+        </li>
+      </div>
+
+
+
+      <div class="navbar-nav ml-auto align-items-center">
+        <div>
+          <input class="align-middle" id="searchBar" style="width: 200px;height: 40px;outline: none;" type="search"
+            placeholder="Search" aria-label="Search">
+          <button class="" type="button">
+            <i class="material-icons" style="font-size:50px;">search</i>
+          </button>
+        </div>
+        <div>
+
+          <button type="button" class="navbar-toggle collapsed"
+            style="display: flex;align-items: center;vertical-align: middle;" data-toggle="dropdown"
+            id="dropdownMenuButton" aria-expanded="false">
+            <div class="navbar-toggler border-0">Account manage</div><i class="material-icons"
+              style="font-size:50px;">account_circle</i>
+          </button>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" style="margin-right:5px">
+            <a class="dropdown-item gloHeader" href="./login.html">Sign in</a>
+            <a class="dropdown-item gloHeader" href="./signup.html">Sign up</a>
+            <a class="dropdown-item gloHeader" href="#">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </nav> <!-- global navbar -->
+  <!--The div element for the map -->
+
+
+
+
+  <div class="container mt-5" style="background-color: #190a70;">
+    <div class="card" style="width: 100%;">
+      <div class="card-header text-center">Track your trip</div>
+      <div class="card-body">
+        <form action="#" method="POST">
+          <div style="border-radius: 8px;" id="map"></div>
+          <br>
+          <p>Your driver: Nguyen Van A</p>
+          <p>From: 123 Nam Ky Khoi Nghia</p>
+          <p>To: 321 Vo Thi Sau</p>
+          <p>Cost: 20.000 vnd</p>
+          <p>Arrived time: <span id="datetime"></span></p>
+          <!-- Fake the arive time -->
+          <script>
+            var timer = 1;
+            var d1 = new Date();
+            var d2 = new Date();
+            d1.setMinutes(d2.getMinutes() + (15))
+            document.getElementById("datetime").innerHTML = d1.getHours() + ":" + d1.getMinutes()
+          </script>
+
+
+          <div class="text-center">
+            <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
+              type="button">
+              Completed trip
+            </button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer>
+    <div class="container-fluid bg-light mt-5">
+      <div class="container">
+        <div class="row pb-3">
+          <div class="col-md-2 mt-3">
+            <h4 class="text-uppercase">TECHGO</h4>
+            <h5>Forward Together</h5>
+            <p>Đồ án môn học Phát triển ứng dụng WEB.<br>
+              Địa chỉ: 18CLC1-KTPM, Trường ĐHKHTN, 227 Nguyễn
+              Văn Cừ, phường 4, quận 5, TPHCM, Việt Nam.<br>
+              Số điện thoại: 0123456789<br>
+              GVHD: Trần Thị Bích Hạnh (MSc), Nguyễn Đức Huy(Bsc).
+
+            </p>
+            <h6>Follow us and keep updated</h6>
+            <i class="fa fa-facebook-official"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-twitter-square"></i>
+
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-1 mb-3">
+            <h5>Về TechGo</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-1 mb-3">
+            <h5>Người dùng</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-1 mb-3">
+            <h5>Đối tác tài xế</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-1 mb-3">
+            <h5>Hướng Dẫn nhanh</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#!">Link 1</a>
+              </li>
+              <li>
+                <a href="#!">Link 2</a>
+              </li>
+              <li>
+                <a href="#!">Link 3</a>
+              </li>
+              <li>
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="container-fluid bg-dark">
+      <div class="row text-white">
+        <div class="col-2 p-3 ml-5">
+          <a href="#" class="policy">Điều khoản và chính sách</a>
+        </div>
+        <div class="col-2 p-3 mr-3">
+          <a href="#" class="policy">Chính sách bảo mật</a>
+        </div>
+        <div class="col-7 p-3 ml-5 text-secondary">
+          &copy; TechGo 2020
+        </div>
+      </div>
+
+
+
+      <!--
+      <div class="d-flex flex-row justify-content-center" style="line-height: 100%;">
+          <div class="float-left"><a href="#">Điều khoản và chính sách</a></div>
+          <div class="p-2"> • </div>
+          <div class="p-2"><a href="#">Chính sách bảo mật</a></div>
+          <div class="py-2">&copy; TechGo 2020</div>
+      </div> -->
+    </div>
+
+
+
+
+
+  </footer>
+</body>
+
+</html>

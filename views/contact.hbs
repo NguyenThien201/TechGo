@@ -1,0 +1,40 @@
+<div class="container mt-5" style="background-color: #190a70;">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Contact Us</div>
+            <div class="card-body">
+                {{#if message}}
+                <div class="row">
+                        <div class="col-md-12 alert {{kind}} text-center">
+                            {{message}}
+                        </div>
+                </div>
+                {{/if}}
+                <form action="#" method="POST">
+                    
+                    <div class="form-group row">
+                        <label for="name" class="col-lg-4">Name:</label>
+                        <input id="name" type="text" name="name" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="emailphone" class="col-lg-4">Email or phone number:</label>
+                        <input id="emailphone" type="text" name="emailphone" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="subject" class="col-lg-4">Subject:</label>
+                        <input id="subject" type="text" name="subject" class="form-control col-lg-7 ml-3" required>
+                    </div>
+                    <div class="form-group row">
+                        <label for="content" class="col-lg-4">Content</label>
+                        <textarea id="content" name="content" rows="10" class="form-control col-lg-7 ml-3" required></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5">Send</button>
+                    </div>
+                </form>
+                
+                
+            </div>
+        </div>
+
+    </div>
