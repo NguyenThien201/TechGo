@@ -3,13 +3,21 @@
       <div class="card-header text-center">Track your trip</div>
       <div class="card-body">
         <form action="#" method="POST">
-          <div style="border-radius: 8px;" id="map"></div>
+          <div style="border-radius: 8px;" id="map"></div>          
           <br>
-          <p>Your driver: Nguyen Van A</p>
-          <p>From: 123 Nam Ky Khoi Nghia</p>
-          <p>To: 321 Vo Thi Sau</p>
-          <p>Cost: 20.000 vnd</p>
+          {{#if isConsumer}}
+          <p>Your driver: {{name}}</p>
+          <p>From: {{start}}</p>
+          <p>To: {{end}}</p>
+          <p>Cost: {{cost}}</p>
           <p>Arrived time: <span id="datetime"></span></p>
+          {{else}}
+          <p>Your customer: {{name}}</p>
+          <p>From: {{from}}</p>
+          <p>To: {{to}}</p>
+          <p>Cost: {{cost}}</p>
+          <p>Arrived time: <span id="datetime"></span></p>
+          {/if}
           <!-- Fake the arive time -->
           <script>
             var timer = 1;

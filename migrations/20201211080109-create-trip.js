@@ -8,22 +8,28 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      user: {
+        type: Sequelize.STRING	
+      },
+      driver: {
+        type: Sequelize.STRING
+      },
       vehicle: {
         type: Sequelize.STRING
       },
-      pickup: {
-        type: Sequelize.STRING
+      startLat: {
+        type: Sequelize.DECIMAL
       },
-      dropoff: {
-        type: Sequelize.STRING
+      startLong: {
+        type: Sequelize.DECIMAL
       },
-      startTime: {
-        type: Sequelize.DATE
+      stopLat: {
+        type: Sequelize.DECIMAL
       },
-      endTime: {
-        type: Sequelize.DATE
+      stopLng: {
+        type: Sequelize.DECIMAL
       },
-      status: {
+      tripStatus: {
         type: Sequelize.STRING
       },
       createdAt: {

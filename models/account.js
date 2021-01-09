@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Account.hasMany(models.BookingOrder);
       Account.hasMany(models.Trip);
+      //Account.hasOne(models.Location);
     }
   };
   Account.init({
@@ -26,7 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     isAdmin: DataTypes.BOOLEAN,
     resetToken:DataTypes.STRING,
-    expireToken:DataTypes.DATE
+    expireToken:DataTypes.DATE,
+    curLat: DataTypes.DECIMAL,
+    curLng: DataTypes.DECIMAL,
+    availability: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Account',

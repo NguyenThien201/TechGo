@@ -6,6 +6,14 @@ router.get("/contact",function(req,res){
     res.render("contact",{title:"Contact us"})
 })
 
+router.get("/test",function(req,res){
+    res.render("test");
+})
+router.post("/test",function (req,res) {
+    res.send(req.body.ok+" "+req.body.name)
+    console.log(req.body.ok+" "+req.body.name)
+})
+
 
 router.get("/",function(req,res){
     res.render("index",{title:"Home"});
@@ -31,4 +39,7 @@ router.get("/whyTechGo",function(req,res){
     res.render("whyTechGo",{title:"Why choosing TechGo"});
 })
 
+router.get("/report_incident",function(req,res){
+    res.render("incident",{title:"Incident report"})
+})
 module.exports=router;

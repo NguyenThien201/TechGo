@@ -3,9 +3,9 @@ var uploadFile=require("express-fileupload");
 //import {config} from "dotenv"
 var router=express.Router();
 var userController=require("../controller/users");
-var nodemail=require("nodemailer");
+//var nodemail=require("nodemailer");
 var crypto=require("crypto");
-var sendGridTransport=require("nodemailer-sendgrid-transport");
+//var sendGridTransport=require("nodemailer-sendgrid-transport");
 var sendGridMail=require("@sendgrid/mail");
 //config();
 require("dotenv").config();
@@ -96,8 +96,9 @@ router.post("/signup",function(req,res,next){
             }
             else
                 var avatarName="avatar.png";
+            
             user={
-                name,dob,email,phone,avatar:avatarName,address,type:accountType,password,isAdmin:false
+                name,dob,email,phone,avatar:avatarName,address,type:accountType,password,isAdmin:false,curLat:15.9031,curLng:105.8067
             }
             userController.createUser(user).then(function(user){
                 res.render("login",{message:"You have registered successfully! Now please log in",kind:"alert-success",tilte:"Log in"}); 

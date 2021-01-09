@@ -112,3 +112,8 @@ a.policy:hover{
   color:black;
   font-weight:normal;
 }
+
+.tab_space{
+  padding-left: 5%; 
+  padding-right:5%
+}

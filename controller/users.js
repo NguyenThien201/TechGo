@@ -4,6 +4,16 @@ var bcrypt=require("bcryptjs");
 var User=models.Account;
 
 
+controller.getAllDrivers=function(){
+    return User.findAll({
+        where:{type:"Driver"}
+    })
+}
+controller.getAllCustomers=function(){
+    return User.findAll({
+        where:{type:"Customer"}
+    })
+}
 controller.createUser=function(user){
     var salt=bcrypt.genSaltSync(10);
     user.password=bcrypt.hashSync(user.password,salt);
@@ -73,6 +83,12 @@ controller.getHashPassword=function(password){
 controller.deleteUser=function(email){
     return User.destroy({
         where:{email:email}
+    })
+}
+
+controller.findUserbyID=function(id){
+    return User.findOne({
+        where:{id:id}
     })
 }
 module.exports=controller;

@@ -15,12 +15,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Trip.init({
+    user: DataTypes.STRING,
+    driver: DataTypes.STRING,
     vehicle: DataTypes.STRING,
-    pickup: DataTypes.STRING,
-    dropoff: DataTypes.STRING,
-    startTime: DataTypes.DATE,
-    endTime: DataTypes.DATE,
-    status: DataTypes.STRING
+    startLat: DataTypes.DECIMAL,
+    startLng: DataTypes.DECIMAL,
+    stopLat: DataTypes.DECIMAL,
+    stopLng: DataTypes.DECIMAL,
+    tripStatus: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Trip',

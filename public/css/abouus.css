@@ -20,7 +20,7 @@ html {
 
 .member {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
+  margin: 100px;
 }
 
 .about-section {
@@ -49,7 +49,7 @@ html {
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: white;
+  color: red;
   background-color: #000;
   text-align: center;
   cursor: pointer;

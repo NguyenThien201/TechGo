@@ -1,0 +1,89 @@
+<div class="container mt-5">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Account</div>
+            <div class="card-body">
+                <nav class="nav">
+                    <a class="nav-link" href="/admin/account_management">Back</a>
+                    
+                </nav>
+                <hr>
+                {{#if message}}
+                <div class="row">
+                        <div class="col-md-12 alert {{kind}} text-center">
+                            {{message}}
+                        </div>
+                </div>
+                {{/if}}
+                {{#if isDriver}}
+                <form action="/admin/driver_account/{{id}}" method="POST">
+                {{else}}
+                <form action="/admin/customer_account/{{id}}" method="POST">
+                {{/if}}
+                    <div class="row mt-5">
+                        <div class="col-12 mb-3">
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    <label for="lat">Latitude:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="number" step="any" class="form-control" name="lat" id="lat" value="{{context.curLat}}">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-4">
+                                    <label for="dob">Longitude:</label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="number" step="any" class="form-control" name="lng" id="lng" value="{{context.curLng}}">
+                                </div>
+                            </div>
+                            <div id="map"></div>
+                            <script>
+                                
+                                function initMap() {
+                                    let lat=parseFloat(document.getElementById("lat").value);
+                                    let lng=parseFloat(document.getElementById("lng").value);
+                                    console.log(lat,lng)
+                                    let pos={ lat: lat, lng: lng };
+                                    const map = new google.maps.Map(document.getElementById("map"), {
+                                    center: pos,
+                                    zoom: 4,
+                                    });
+                                    const marker=new google.maps.Marker({
+                                        position:pos,map,title:"I'm here"
+                                    })
+                                    
+                                    map.addListener("click",()=>{
+                                        marker.setMap(null);
+                                        map.panTo(new google.maps.LatLng())
+                                    })
+                                }
+                                
+                            </script>      
+                                                 
+                        </div>
+                    
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='/'"
+                            type="button">
+                            Cancel
+                        </button>
+                        <button type="submit" class="btn btn-primary px-5 mt-3">
+                            Save changes
+                        </button>
+                    </div>
+                </form>
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-4MVwu_BMHd5I8vH1RlX1XN46wUtKygA&callback=initMap&libraries=&v=weekly"
+                defer></script>
+                
+                <hr>
+
+                
+                
+            </div>
+        </div>
+
+    </div>

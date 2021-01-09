@@ -1,0 +1,48 @@
+
+<div id="myDiv" class="animate-bottom" style="display: none;">
+    <div class="container mt-5" style="background-color: #190a70;">
+        <div class="card mx-auto mt-5" style="width: 100%;">
+            <div class="card-header text-center">Announcement</div>
+            <div class="card-body">
+                {{#if message}}
+                <div class="row">
+                    <div class="col-md-12 alert {{kind}} text-center" style="font-size: 5vw;" id="message">
+                        {{message}}
+                    </div>
+                </div>
+            <script>
+                document.addEventListener('readystatechange', event => { 
+            
+                // When HTML/DOM elements are ready:
+                if (event.target.readyState === "interactive") {   
+                    //does same as:  ..addEventListener("DOMContentLoaded"..)
+                    console.log("ready");
+                }
+                // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+                if (event.target.readyState === "complete") {
+                    setInterval( function() {
+                        $(function(){
+                            $.getJSON("book.json",function(data){
+                                if(data.orderStatus==="Driver cancelled"){
+                                    document.getElementById("message").value=data.orderStatus;
+                                    clearInterval();
+                                }
+                            else if (data.orderStatus==="Driver accepted"){
+                                document.getElementById("message").value=data.orderStatus;
+                                clearInterval();
+                            }
+                        })
+                        })
+                    
+                    }, 2500);
+                } 
+        });
+            </script>
+            
+            
+
+
+            </div>
+        </div>
+    </div>
+</div>

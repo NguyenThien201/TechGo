@@ -1,6 +1,6 @@
 'use strict';
 const {
-  Model
+  Model, DECIMAL
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class BookingOrder extends Model {
@@ -18,9 +18,10 @@ module.exports = (sequelize, DataTypes) => {
   };
   BookingOrder.init({
     vehicle: DataTypes.STRING,
-    start: DataTypes.STRING,
-    end: DataTypes.STRING,
-    bookingTime: DataTypes.DATE
+    start:DataTypes.STRING,
+    end:DataTypes.STRING,
+    bookingTime: DataTypes.DATE,
+    orderStatus:DataTypes.STRING
   }, {
     sequelize,
     modelName: 'BookingOrder',

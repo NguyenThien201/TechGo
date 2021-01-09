@@ -41,12 +41,15 @@ app.use(function(req,res,next){
     res.locals.username=req.session.user? req.session.user.name+" ("+req.session.user.type[0]+")" : "";
     res.locals.avatar=req.session.user? req.session.user.avatar:"";
     res.locals.isLoggedIn=req.session.user? true:false;
+    res.locals.isAdmin=req.session.user? req.session.user.isAdmin: "";
+    res.locals.isConsumer=req.session.user? req.session.user.type==="Customer":""; 
     next();
 });
 
 app.use("/",require("./routes/index"));
 app.use("/user",require("./routes/users"));
 app.use("/booktrack",require("./routes/booktrack"));
+app.use("/admin",require("./routes/admin"));
 
 
 

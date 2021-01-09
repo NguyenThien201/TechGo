@@ -11,14 +11,18 @@ module.exports = {
       vehicle: {
         type: Sequelize.STRING
       },
-      start: {
-        type: Sequelize.STRING
+      
+      start:{
+        type:Sequelize.STRING
       },
-      end: {
-        type: Sequelize.STRING
+      end:{
+        type:Sequelize.STRING
       },
       bookingTime: {
         type: Sequelize.DATE
+      },
+      orderStatus:{
+        type:Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

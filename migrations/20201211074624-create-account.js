@@ -41,6 +41,15 @@ module.exports = {
       expireToken:{
         type: Sequelize.DATE
       },
+      curLat: {
+        type: Sequelize.DECIMAL
+      },
+      curLng: {
+        type: Sequelize.DECIMAL
+      },
+      availability: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

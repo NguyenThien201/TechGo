@@ -1,0 +1,83 @@
+<div class="container mt-5" style="background-color: #190a70;">
+    <div class="card mx-auto mt-5" style="width: 100%;">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ_3qjJdmDZj4BbuiMaFKSNPJFCBpnn4&callback=initMap&libraries=&v=weekly"
+        defer></script>
+    <script type="text/javascript"></script>
+        <div class="card-header text-center">A booking order</div>
+        <div class="card-body">
+            {{#if message}}
+            <div class="row">
+                <div class="col-md-12 alert {{kind}} text-center">
+                    {{message}}
+                </div>
+
+            </div>
+            
+            {{else}}
+            <form action="#" method="POST" role="form">
+                <div class="form-group row">
+                    <label for="name" class="col">Customer's name:</label>
+                    <input id="name" type="text" name="name" class="form-control mx-2" value="{{context.name}}" readonly required>
+                </div>
+                <div class="form-group row">
+                    <label for="book" class="col">Booking ID:</label>
+                    <input id="book" type="text" name="book" class="form-control mx-2" value="{{context.id}}" readonly required>
+                    
+                </div>
+                <div class="form-group row">
+                    <label for="time" class="col">Booking Time:</label>
+                    <input id="time" type="text" name="time" class="form-control mx-2" value="{{context.time}}" readonly required>
+                    
+                </div>
+                <div class="form-group row">
+                    <label for="start" class="col">Start location:</label>
+                    <input id="start" type="text" name="start" class="form-control mx-2" value="{{context.start}}" readonly required>
+                </div>
+                <div class="form-group row">
+                    <label for="end" class="col" class="custom-control-label">End location:</label>
+                    <input id="end" type="text" name="end" class="form-control mx-2" value="{{context.end}}" readonly required>
+                    
+                </div>
+                <div id="map" style="width: 100%;height: 300px; border-radius: 8px;margin: 8px;"></div>
+                <div class="form-group row">
+                    <label for="pay" class="col">Payment method:</label>
+                    <input id="pay" type="text" name="pay" class="form-control mx-2" value="{{context.form}}" readonly required>
+                </div>
+                <div class="form-group row">
+                    <label for="cost" class="col">Cost:</label>
+                    <input id="cost" type="text" name="cost" class="form-control mx-2" value="{{context.cost}}" readonly required>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" name="confirm" value="decline" class="btn btn-primary px-5 mt-3" >
+                        Decline
+                    </button>
+                    <button type="submit" name="confirm" value="accept" class="btn btn-primary px-5 mt-3">
+                        Accept
+                    </button>
+                </div>
+            </form>
+            {{/if}}
+            <script>
+                function initMap() {
+                    const start=document.getElementById("start").value;
+                    const end=document.getElementById("end").value;
+                    const myLatLng = { lat: 10.814857, lng: 106.686699 };
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 10,
+                    center: myLatLng,
+                });
+                new google.maps.Marker({
+                    position: myLatLng,
+                    map,
+                    title: "Hello World!",
+                });
+      }
+            </script>
+
+
+        </div>
+    </div>
+</div>
