@@ -1,0 +1,70 @@
+<div class="container mt-5 accordion"  id="accordionExample">
+        <div class="card mx-auto" style="width: 100%;">
+            <div class="card-header text-center">Advanced account management</div>
+            <div class="card-body">
+                <nav class="nav">
+                    <a class="nav-link" href="/admin/account_management">Back</a>
+                    <a class="nav-link" href="/admin/{{type}}_account/{{id}}/location">Location</a>
+                    <a class="nav-link" href="/admin/{{type}}_account/{{id}}/activities">Booking orders</a>
+                    <a class="nav-link" href="/admin/{{type}}_account/{{id}}/rides">Trip activities</a>
+                </nav>
+                
+                <div class="card-footer text-center bg-white">
+                <h6>List of orders</h6>
+            </div>
+            {{#if isConsumer}}
+            <table class="table">
+                <thead>
+                    <th scope="col">No</th>
+                    <th scope="col">Driver</th>
+                    <th scope="col">Vehicle</th>
+                    <th scope="col">Start point</th>
+                    <th scope="col">End point</th>
+                    <th scope="col">Booking time</th>
+                    <th scope="col">Status</th>
+                </thead>
+                <tbody>
+                    {{#each listOrder}}
+                    <tr>
+                        <th scope="row">{{@index}}</th>
+                        <td>{{driver}}</td>
+                        <td>{{vehicle}}</td>
+                        <td>{{start}}</td>
+                        <td>{{end}}</td>
+                        <td>{{bookingTime}}</td>
+                        <td>{{status}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{else}}
+            <table class="table">
+                <thead>
+                    <th scope="col">No</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Vehicle</th>
+                    <th scope="col">Start point</th>
+                    <th scope="col">End point</th>
+                    <th scope="col">Booking time</th>
+                    <th scope="col">Status</th>
+                </thead>
+                <tbody>
+                    {{#each listOrder}}
+                    <tr>
+                        <th scope="row">{{@index}}</th>
+                        <td>{{customer}}</td>
+                        <td>{{vehicle}}</td>
+                        <td>{{start}}</td>
+                        <td>{{end}}</td>
+                        <td>{{bookingTime}}</td>
+                        <td>{{status}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{/if}}
+            
+            </div>
+        </div>
+
+    </div>

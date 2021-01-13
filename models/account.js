@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Account.hasMany(models.BookingOrder);
-      Account.hasMany(models.Trip);
+      //Account.hasMany(models.Trip);
       //Account.hasOne(models.Location);
     }
   };

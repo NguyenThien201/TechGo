@@ -16,6 +16,14 @@ router.post("/test",function (req,res) {
 
 
 router.get("/",function(req,res){
+    if (req.session.user){
+        if (req.session.user.type==="Driver"){
+            res.render("index",{title:"Home",isDriver:true,isConsumer:false});
+        }
+        else if (req.session.user.type==="Customer"){
+            res.render("index",{title:"Home",isDriver:false,isConsumer:true});
+        }
+    }
     res.render("index",{title:"Home"});
 })
 

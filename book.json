@@ -1,1 +1,1 @@
-{"vehicle":"Car","start":"(10.814857, 106.686699)","end":"(10.814857, 106.686699)","bookingTime":1610208329841,"orderStatus":"Waiting for driver","AccountId":2}
+{"id":20,"vehicle":"Car","start":"(10.814857, 106.686699)","end":"(10.814857, 106.686699)","bookingTime":"2021-01-13T02:18:53.431Z","orderStatus":"Waiting for driver","AccountId":2,"updatedAt":"2021-01-13T02:18:53.433Z","createdAt":"2021-01-13T02:18:53.433Z"}

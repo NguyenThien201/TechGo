@@ -4,7 +4,9 @@
             <div class="card-body">
                 <nav class="nav">
                     <a class="nav-link" href="/admin/account_management">Back</a>
-                    
+                    <a class="nav-link" href="/admin/{{type}}_account/{{id}}/location">Location</a>
+                    <a class="nav-link" href="/admin/{{type}}_account/{{id}}/activities">Booking orders</a>
+                    <a class="nav-link" href="/admin/{{type}}_account/{{id}}/rides">Trip activities</a>
                 </nav>
                 <hr>
                 {{#if message}}
@@ -14,11 +16,11 @@
                         </div>
                 </div>
                 {{/if}}
-                {{#if isDriver}}
+                {{#unless isConsumer}}
                 <form action="/admin/driver_account/{{id}}" method="POST">
                 {{else}}
                 <form action="/admin/customer_account/{{id}}" method="POST">
-                {{/if}}
+                {{/unless}}
                     <div class="row mt-5">
                         <div class="col-12 mb-3">
                             <div class="form-group row mb-3">

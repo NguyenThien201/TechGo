@@ -1,48 +1,97 @@
 
-<div id="myDiv" class="animate-bottom" style="display: none;">
-    <div class="container mt-5" style="background-color: #190a70;">
+<div class="container mt-5" style="background-color: #190a70;">
         <div class="card mx-auto mt-5" style="width: 100%;">
-            <div class="card-header text-center">Announcement</div>
-            <div class="card-body">
-                {{#if message}}
-                <div class="row">
-                    <div class="col-md-12 alert {{kind}} text-center" style="font-size: 5vw;" id="message">
-                        {{message}}
+                
+           
+                <div id="loading" style="display:block;">
+                    {{#if message}}
+                    <div class="row">
+                        <div class="col-md-12 text-center" style="font-size: 5vw;" id="message">
+                            {{message}}
+                        </div>
                     </div>
+                    <div class="row justify-content-center">
+                        <div class="spinner-grow" style="width: 30vw; height: 30vw;color: #190a70;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                    {{/if}}
                 </div>
+                <div class="modal fade" id="content" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Yay! The driver is found</h5>
+                                
+                            </div>
+                    <form action="/booktrack/loading" method="POST">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">Driver's name:</div>
+                                <div class="col-6">{{driver.name}}</div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-6">Vehicle:</div>
+                                <div class="col-6">{{book.vehicle}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Time:</div>
+                                <div class="col-6">{{book.bookingTime}}</div>
+                            </div>
+                            <input type="hidden" name="id" value="{{book.id}}">
+                            <input type="hidden" name="driverId" value="{{driver.id}}">
+                            <input type="hidden" name="driver" value="{{driver.name}}">
+                            <input type="hidden" name="from" value="{{book.start}}">
+                            <input type="hidden" name="to" value="{{book.end}}">
+                            <input type="hidden" name="cost" value="{{purchase.cost}}">
+                            <input type="hidden" name="time" value="{{book.bookingTime}}">
+                            <input type="hidden" name="vehicle" value="{{book.vehicle}}"                 
+                  </div>
+                  <div class="modal-footer">
+                    
+                    <button type="submit" class="btn btn-primary">OK</button>
+                  </div>
+                </form>
+                
+              </div>
+            </div>
+        </div>
+
+                
             <script>
+                    
                 document.addEventListener('readystatechange', event => { 
             
-                // When HTML/DOM elements are ready:
-                if (event.target.readyState === "interactive") {   
-                    //does same as:  ..addEventListener("DOMContentLoaded"..)
-                    console.log("ready");
-                }
-                // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
-                if (event.target.readyState === "complete") {
-                    setInterval( function() {
-                        $(function(){
-                            $.getJSON("book.json",function(data){
-                                if(data.orderStatus==="Driver cancelled"){
-                                    document.getElementById("message").value=data.orderStatus;
-                                    clearInterval();
-                                }
-                            else if (data.orderStatus==="Driver accepted"){
-                                document.getElementById("message").value=data.orderStatus;
-                                clearInterval();
+                    // When HTML/DOM elements are ready:
+                    /*
+                    if (event.target.readyState === "loading") {   
+                        //does same as:  ..addEventListener("DOMContentLoaded"..) 
+                        
+                    }*/
+                    // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+                    if (event.target.readyState === "complete") {
+                        let sec=0;
+                        let x=setInterval(function(){
+                            sec+=1;
+                            if (sec==10){
+                                clearInterval(x);
+                                document.getElementById("loading").style.display="none";
+                                $(document).ready(function(){
+                                    $("#content").modal("show");
+                                });
                             }
-                        })
-                        })
-                    
-                    }, 2500);
-                } 
-        });
+                        },1000);
+                       
+                        
+                        
+                    } 
+                });
             </script>
             
             
 
 
-            </div>
+            
         </div>
     </div>
-</div>

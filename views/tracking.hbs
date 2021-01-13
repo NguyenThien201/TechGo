@@ -6,18 +6,24 @@
           <div style="border-radius: 8px;" id="map"></div>          
           <br>
           {{#if isConsumer}}
-          <p>Your driver: {{name}}</p>
+          <p>Your driver: {{driver}}</p>
           <p>From: {{start}}</p>
-          <p>To: {{end}}</p>
+          <p>To: {{dest}}</p>
           <p>Cost: {{cost}}</p>
-          <p>Arrived time: <span id="datetime"></span></p>
+          <p>Time: {{time}}</p>
           {{else}}
           <p>Your customer: {{name}}</p>
           <p>From: {{from}}</p>
           <p>To: {{to}}</p>
-          <p>Cost: {{cost}}</p>
+          <p>Cost: {{cost}} VND</p>
           <p>Arrived time: <span id="datetime"></span></p>
-          {/if}
+          <div class="text-center">
+            <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
+              type="button">
+              Completed trip
+            </button>
+          </div>
+          {{/if}}
           <!-- Fake the arive time -->
           <script>
             var timer = 1;
@@ -28,12 +34,7 @@
           </script>
 
 
-          <div class="text-center">
-            <button type="button" class="btn btn-primary px-5 mt-3" onclick="location.href='./index.html'"
-              type="button">
-              Completed trip
-            </button>
-          </div>
+          
         </form>
 
 
@@ -66,4 +67,4 @@
         map: map,
       });
     }
-  </script>
+</script>

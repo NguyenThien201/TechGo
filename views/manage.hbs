@@ -4,9 +4,9 @@
             <div class="card-body">
                 <nav class="nav">
                     <a class="nav-link" href="/admin/account_management">Account Management</a>
-                    <a class="nav-link" href="/admin/reports">Report List</a>
-                    <a class="nav-link" href="/admin/contacts">Contact List</a>
-                    <a class="nav-link" href="/admin/feedback">Feedback</a>
+                    <a class="nav-link" href="#">Report List</a>
+                    <a class="nav-link" href="#">Contact List</a>
+                    <a class="nav-link" href="#">Feedback</a>
                 </nav>
                 <hr>
                 {{#if message}}
@@ -27,7 +27,7 @@
                         <th scope="col">Email</th>
                         <th scope="col">Phone</th>
                         <th scope="col">Address</th>
-                        <th scope="col">Location</th>
+                        <th scope="col">Others</th>
                     </thead>
                     <tbody>
                         {{#each listDriver}}
@@ -40,7 +40,7 @@
                                 <td>{{email}}</td>
                                 <td>{{phone}}</td>
                                 <td>{{address}}</td>
-                                <td><a href="/admin/driver_account/{{id}}">See</a></td>
+                                <td><a href="/admin/driver_account/{{id}}/location">See More</a></td>
                                 
                             </tr>
                             
@@ -49,6 +49,37 @@
                     </tbody>
                 </table>
                 
+                <h3>CUSTOMERS</h3>
+                
+                <table class="table">
+                    <thead>
+                        <th scope="col">No</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Others</th>
+                    </thead>
+                    <tbody>
+                        {{#each listCustomer}}
+                            
+                            <tr>
+                                
+                                <th scope="row">{{@index}}</th>
+                                <td>{{name}}</td>
+                                <td>{{dob}}</td>
+                                <td>{{email}}</td>
+                                <td>{{phone}}</td>
+                                <td>{{address}}</td>
+                                <td><a href="/admin/customer_account/{{id}}/location">See More</a></td>
+                                
+                            </tr>
+                            
+                        {{/each}}
+                        
+                    </tbody>
+                </table>
                 
             </div>
         </div>

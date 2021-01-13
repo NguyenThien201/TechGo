@@ -98,7 +98,7 @@ router.post("/signup",function(req,res,next){
                 var avatarName="avatar.png";
             
             user={
-                name,dob,email,phone,avatar:avatarName,address,type:accountType,password,isAdmin:false,curLat:15.9031,curLng:105.8067
+                name,dob,email,phone,avatar:avatarName,address,type:accountType,password,isAdmin:false,curLat:15.9031,curLng:105.8067,availability:"available"
             }
             userController.createUser(user).then(function(user){
                 res.render("login",{message:"You have registered successfully! Now please log in",kind:"alert-success",tilte:"Log in"}); 

@@ -4,70 +4,34 @@
                 Trip history
             </div>
             <div class="card-body">
-                <p class="card-text">Total trip: 10</p>
-                <p class="card-text">Total paid: 655.000vnd</p>
+                <p class="card-text">Total trip: {{quantity}}</p>
+                <p class="card-text">Total paid: {{total}} vnd</p>
             </div>
             <div class="card-footer text-center bg-white">
                 <h6>List of trips</h6>
             </div>
             <ul class="list-group">
-                <li class="list-group-item" id="trip1">
-                    <span class="font-weight-bolder">Trip (24/11/2020)</span>
-                    <i class="material-icons btn float-right" type="button" data-toggle="collapse" data-target="#lorem1"
-                        aria-expanded="false" aria-controls="lorem1">
+                {{#each Trips}}
+                <li class="list-group-item" id="trip{{@index}}">
+                    <span class="font-weight-bolder">Trip booked ({{bookTime}})</span>
+                    <i class="material-icons btn float-right" type="button" data-toggle="collapse" data-target="#lorem{{@index}}"
+                        aria-expanded="false" aria-controls="lorem{{@index}}">
                         arrow_drop_down
                     </i>
                 </li>
-                <div id="lorem1" class="collapse" aria-labelledby="trip1" data-parent="#accordionExample">
+                <div id="lorem{{@index}}" class="collapse" aria-labelledby="trip{{@index}}" data-parent="#accordionExample">
                     <div class="card-body">
-                        <p>From: Nam ky khoi nghia</p>
-                        <p>To: 123 Vo Thi Sau</p>
-                        <p>Booked at 12:00 pm</p>
-                        <p>Picked up at 12:15 pm</p>
-                        <p>Trip completed at 12:30 pm</p>
-                        <p>Driver: Nguyen van A</p>
-                        <p>Cost: 12000 VND</p>
-                        <p>Trip status: Complete/Cancel</p>
+                        <p>Vehicle: {{vehicle}}</p>
+                        <p>From: {{from}}</p>
+                        <p>To: {{to}}</p>
+                        <p>Picked up at {{pickTime}}</p>
+                        <p>Trip completed at {{dropTime}}</p>
+                        <p>Cost: {{cost}} VND</p>
+                        <p>Trip status: {{tripStatus}}</p>
                     </div>
                 </div>
-                <li class="list-group-item" id="trip2">
-                    <span class="font-weight-bolder">Trip (24/11/2020)</span>
-                    <i class="material-icons btn float-right" type="button" data-toggle="collapse" data-target="#lorem2"
-                        aria-expanded="false" aria-controls="lorem2">
-                        arrow_drop_down
-                    </i>
-                </li>
-                <div id="lorem2" class="collapse" aria-labelledby="trip2" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>From: Nam ky khoi nghia</p>
-                        <p>To: 123 Vo Thi Sau</p>
-                        <p>Booked at 12:00 pm</p>
-                        <p>Picked up at 12:15 pm</p>
-                        <p>Trip completed at 12:30 pm</p>
-                        <p>Driver: Nguyen van A</p>
-                        <p>Cost: 12000 VND</p>
-                        <p>Trip status: Complete/Cancel</p>
-                    </div>
-                </div>
-                <li class="list-group-item" id="trip3">
-                    <span class="font-weight-bolder">Trip (24/11/2020)</span>
-                    <i class="material-icons btn float-right" type="button" data-toggle="collapse" data-target="#lorem3"
-                        aria-expanded="false" aria-controls="lorem3">
-                        arrow_drop_down
-                    </i>
-                </li>
-                <div id="lorem3" class="collapse" aria-labelledby="trip3" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <p>From: Nam ky khoi nghia</p>
-                        <p>To: 123 Vo Thi Sau</p>
-                        <p>Booked at 12:00 pm</p>
-                        <p>Picked up at 12:15 pm</p>
-                        <p>Trip completed at 12:30 pm</p>
-                        <p>Driver: Nguyen van A</p>
-                        <p>Cost: 12000 VND</p>
-                        <p>Trip status: Complete/Cancel</p>
-                    </div>
-                </div>
+                {{/each}}
+                
             </ul>
             <div class="card-footer">
                 <nav aria-label="Page navigation">

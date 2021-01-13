@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
     start:DataTypes.STRING,
     end:DataTypes.STRING,
     bookingTime: DataTypes.DATE,
-    orderStatus:DataTypes.STRING
+    orderStatus:DataTypes.STRING,
+    driverFound:DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'BookingOrder',

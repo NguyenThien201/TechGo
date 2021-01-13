@@ -24,6 +24,9 @@ module.exports = {
       orderStatus:{
         type:Sequelize.STRING
       },
+      driverFound:{
+        type:Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
