@@ -90,6 +90,6 @@ app.get("/sync",function(req,res){
     });
 }); */  
 
-app.listen(app.get("port"),function(){
+app.listen(process.env.PORT|| app.get("port"),function(){
     console.log("Listening at port "+app.get("port")); 
 })

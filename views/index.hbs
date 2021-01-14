@@ -1,12 +1,19 @@
+
+  
 <div class="container">
 
 
-        <div class="row">
+    <!-- become our partner row -->
+    <div class="row">
         <div>
             {{#if isDriver}}
             <p style="color: white;font-size: 80px;margin-top: 40px;margin-left: 40px;">TechGo</p>
             <p style="color: white;font-size: 30px;margin-left: 40px;margin-bottom: 40px;margin-top: 0px;">The best
                 driver - the best earner</p>
+            {{else if isConsumer}}
+            <p style="color: white;font-size: 80px;margin-top: 40px;margin-left: 40px;">TechGo</p>
+            <p style="color: white;font-size: 30px;margin-left: 40px;margin-bottom: 40px;margin-top: 0px;">Best services
+                for your</p>
             {{else}}
             <p style="color: white;font-size: 80px;margin-top: 40px;margin-left: 40px;">TechGo</p>
             <p style="color: white;font-size: 30px;margin-left: 40px;margin-bottom: 40px;margin-top: 0px;">Bring you
@@ -19,34 +26,36 @@
             {{#if isDriver}}
             <p style="color: white;font-size: 40px;margin: 40px;">Be TechGo Driver <br>Earn up to 12.000.000 vnd a month
             </p>
+            {{ else if isConsumer}}
+            <p style="color: white;font-size: 40px;margin: 40px;">Fast and safe trips with our top drivers</p>
             {{else}}
             <p style="color: white;font-size: 40px;margin: 40px;">Need a job? <br>Checkout our position</p>
             {{/if}}
         </div>
     </div>
-  
-        {{#if isDriver}}
-          <div class="row justify-content-center" style="margin-bottom: 40px;">
+
+    {{#if isDriver}}
+    <div class="row justify-content-center" style="margin-bottom: 40px;">
         <div class="col-6" style="text-align: center;">
             <img src="/images/taxi-driver.png" alt="" width="70%" height="width">
         </div>
-        </div>
-        {{else if isConsumer}}
-          <div class="row justify-content-center" style="margin-bottom: 40px;">
+    </div>
+    {{else if isConsumer}}
+    <div class="row justify-content-center" style="margin-bottom: 40px;">
         <div class="col-6" style="text-align: center;">
             <img src="/images/delivery-man-driver-pngrepo-com.png" alt="" width="70%" height="width">
         </div>
-        </div>
-        {{else}}
-          <div class="row justify-content-between" style="margin-bottom: 40px;">
+    </div>
+    {{else}}
+    <div class="row justify-content-between" style="margin-bottom: 40px;">
         <div class="col-6" style="text-align: center;">
             <img src="/images/taxi-driver.png" alt="" width="70%" height="width">
         </div>
         <div class="col-6" style="text-align: center;">
             <img src="/images/delivery-man-driver-pngrepo-com.png" alt="" width="70%" height="width">
         </div>
-        </div>
-        {{/if}}
+    </div>
+    {{/if}}
 
     {{#if isDriver}}
     {{else if isConsumer}}
@@ -66,34 +75,34 @@
     </div>
     {{/if}}
     <!-- learn more about service -->
-     {{#if isDriver}}
-      <div class="row">
-        <p style="color: white;font-size: 40px;margin: 40px;"> TechGo driver richest drivers on the globe</p>
+    {{#if isDriver}}
+    <div class="row">
+        <p style="color: white;font-size: 40px;margin: 40px;"> TechGo driver - richest drivers on the globe</p>
     </div> <!-- learn more about service -->
-        <!-- service table -->
+    <!-- service table -->
     <div class="row rounded justify-content-around" style="padding-top: 40px;padding-bottom: 40px;">
-        <div class="col-5 rounded" style="background-color: white;text-align: center; padding: 30px;">
-                <img src="/images/icon-earn-1.png" width="100vw" height="100vw">
-                <h3 class="why">50.000vnd/hour</h3>
-                <p class="why"> &emsp;Picked your customer and earn upto 50.000 vnd per hour</p>
+        <div class="col-3 rounded" style="background-color: white;text-align: center; padding: 30px;">
+            <img src="/images/icon-earn-1.png" width="100vw" height="100vw">
+            <h3 class="why">50.000vnd/hour</h3>
+            <p class="why"> &emsp;Picked your customer and earn upto 50.000 vnd per hour</p>
         </div>
-        <div class="col-5 rounded" style="background-color: white;text-align: center; padding: 10px;">
-                <img src="/images/icon-freedom.png" width="100vw" height="100vw">
-                <h3 class="why">Flexible time</h3>
-                <p class="why"> &emsp;Word only when you feel best</p>
+        <div class="col-3 rounded" style="background-color: white;text-align: center; padding: 10px;">
+            <img src="/images/icon-freedom.png" width="100vw" height="100vw">
+            <h3 class="why">Flexible time</h3>
+            <p class="why"> &emsp;Word only when you feel best</p>
         </div>
-         <div class="col-5 rounded m-1" style="background-color: white;text-align: center; padding: 10px;">            
-                <img src="/images/icon-community-1.png" width="100vw" height="100vw">
-                <h3 class="why">Supported by hour top service</h3>
-                <p class="why"> &emsp;Driver is also our customer, your will be helped whenever needed</p>
+        <div class="col-3 rounded" style="background-color: white;text-align: center; padding: 10px;">
+            <img src="/images/icon-community-1.png" width="100vw" height="100vw">
+            <h3 class="why">Supported by our top service</h3>
+            <p class="why"> &emsp;Driver is also our customer, your will be helped whenever needed</p>
         </div>
     </div> <!-- service table -->
     {{else}}
-     <div class="row">
+    <div class="row">
         <p style="color: white;font-size: 40px;margin: 40px;"> Learn more about the many different ways we serve
             your everyday needs.</p>
-    </div> <!-- learn more about service -->    
-        <!-- service table -->
+    </div> <!-- learn more about service -->
+    <!-- service table -->
     <div class="row rounded justify-content-around" style="padding-top: 40px;padding-bottom: 40px;">
         <div class="col-5 rounded" style="background-color: white;text-align: center; padding: 30px;">
             <a href="/transport" style="text-decoration: none;color: black;">
@@ -113,4 +122,5 @@
     {{/if}}
 
 
-    </div>
+</div>
+
